@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
+      - ./postprocess.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -22,3 +23,4 @@ jobs:
           http_url: https://www.buzzsprout.com/api/1927628/episodes.json
           downloaded_filename: src/_data/episodes.json
           authorization: Token token=${{ secrets.BUZZSPROUT_TOKEN }}
+          postprocess: ./postprocess.js
