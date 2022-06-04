@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="<%= site.locale %>">
+<html class="h-full antialiased" lang="<%= site.locale %>">
   <head>
     <%= render "head", metadata: site.metadata, title: resource.data.title %>
   </head>
-  <body class="<%= resource.data.layout %> <%= resource.data.page_class %>">
+  <body class="<%= resource.data.layout %> <%= resource.data.page_class %> text-neutral-50">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
     <main>
@@ -11,5 +11,10 @@
     </main>
 
     <%= render "footer", metadata: site.metadata %>
+    <% if Bridgetown.env.development? %>
+      <script>
+        console.log(`Layout:`, `<%= resource.layout.name %>`);
+      </script>
+    <% end %>
   </body>
 </html>

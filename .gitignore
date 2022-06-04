@@ -35,3 +35,5 @@ yarn-debug.log*
 .yarn-integrity
 
 .vscode
+
+frontend/styles/jit-refresh.css
