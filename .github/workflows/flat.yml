@@ -19,6 +19,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: https://www.buzzsprout.com/api/1927628
+          http_url: https://www.buzzsprout.com/api/1927628/episodes.json
           downloaded_filename: src/_data/episodes.json
           authorization: Token token=${{ secrets.BUZZSPROUT_TOKEN }}
