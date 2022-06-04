@@ -21,4 +21,4 @@ jobs:
         with:
           http_url: https://www.buzzsprout.com/api/1927628
           downloaded_filename: src/_data/episodes.json
-          authorization: Bearer ${{ secrets.BUZZSPROUT_TOKEN }}
+          authorization: Token token=${{ secrets.BUZZSPROUT_TOKEN }}
