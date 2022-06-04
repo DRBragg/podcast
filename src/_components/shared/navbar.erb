@@ -1,11 +1,17 @@
-<header>
-  <img src="<%= relative_url '/images/logo.svg' %>" alt="Logo" class="w-auto h-6" />
-</header>
-
-<nav>
-  <ul>
-    <li><a href="<%= relative_url '/' %>">Home</a></li>
-    <li><a href="<%= relative_url '/about' %>">About</a></li>
-    <li><a href="<%= relative_url '/episodes' %>">Episodes</a></li>
-  </ul>
-</nav>
+<div class="relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex justify-between items-center border-b-2 border-red-400 py-6 md:justify-start md:space-x-10">
+      <div class="flex justify-start lg:w-0 lg:flex-1">
+        <a href="/">
+          <span class="sr-only"></span>
+          <img class="h-20 w-auto" src="<%= relative_url '/images/podcast.jpeg' %>" alt="Logo">
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-10">
+        <a href="<%= relative_url '/' %>" class="text-base font-medium text-indigo-400 hover:text-indigo-500">Home</a>
+        <a href="<%= relative_url '/episodes' %>" class="text-base font-medium text-indigo-400 hover:text-indigo-500">Episodes</a>
+        <a href="<%= relative_url '/about' %>" class="text-base font-medium text-indigo-400 hover:text-indigo-500">About</a>
+      </nav>
+    </div>
+  </div>
+</div>

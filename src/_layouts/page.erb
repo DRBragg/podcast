@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<%= render ContainerComponent.new do %>
-<h1><%= resource.data.title %></h1>
-
-<%= yield %>
+<%= render ContainerComponent.new(max_w: "auto", classes: "mx-auto") do %>
+  <%= yield %>
 <% end %>

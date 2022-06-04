@@ -1,19 +1,20 @@
 ---<%
-# route: /items/:slug
+# route: /episodes/:slug
 episodes = app.bridgetown_site.data.episodes
 r.get do
-  # item_id, *item_sku = r.params[:slug].split("-")
-  # item_sku = item_sku.join("-")
   episode = episodes.find { |i| Bridgetown::Utils.slugify(i.title) == r.params[:slug] }
+  guest = episode.tags.split(/\s+/).join("+")
+  guest_tag = Bridgetown::Utils.slugify(episode.tags)
   render_with data: {
     layout: :episode,
     title: "Item Page",
-    episode: episode
-    # item_id: item_id,
-    # item_sku: item_sku
+    episode: episode,
+    guest: guest,
+    guest_tag: guest_tag
   }
 end
 %>---
 
+<div id='buzzsprout-small-player-tags-<%= resource.data.guest_tag %>'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1927628.js?artist=&container_id=buzzsprout-small-player-tags-<%= resource.data.guest_tag %>&player=small&tags=<%= resource.data.guest %>'></script>
 
 <%= resource.data.episode.description.html_safe %>

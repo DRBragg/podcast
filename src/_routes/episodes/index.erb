@@ -1,6 +1,6 @@
 ---<%
 # route: /episodes
-episodes = app.bridgetown_site.data.episodes.map { |e| e.merge(slug: Bridgetown::Utils.slugify(e.title)) unless e.title }
+episodes = app.bridgetown_site.data.episodes.map { |e| e.merge(slug: Bridgetown::Utils.slugify(e.title)) }
 r.get do
   render_with data: {
     layout: :page,
@@ -10,8 +10,47 @@ r.get do
 end
 %>---
 
-<ul>
-  <% resource.data.episodes.each do |episode| %>
-    <li><a href="/episodes/<%= episode[:slug] %>"><%= episode[:title] %></a></li>
-  <% end %>
-</ul>
+<div class="pt-12 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="relative max-w-lg mx-auto divide-y-2 divide-red-400 lg:max-w-7xl">
+    <div>
+      <h2 class="text-3xl tracking-tight font-extrabold text-blue-400 sm:text-4xl">Full Episodes</h2>
+    </div>
+    <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+    <% resource.data.episodes.reject { |e| e.episode_number.nil? }.each do |episode| %>
+      <div>
+        <p class="text-sm text-blue-400">
+          <time datetime="<%= Date.parse(episode[:published_at]).strftime("%F") %>"><%= Date.parse(episode[:published_at]).strftime("%b %d, %Y") %></time>
+        </p>
+        <a href="/episodes/<%= episode[:slug] %>" class="mt-2 block">
+          <p class="text-xl font-semibold text-gray-50"><%= episode[:title] %></p>
+          <p class="mt-3 text-base text-gray-100"><%== episode[:summary] %></p>
+        </a>
+        <div class="mt-3">
+          <a href="#" class="text-base font-semibold text-indigo-400 hover:text-indigo-500"> Listen </a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <div class="relative max-w-lg mx-auto divide-y-2 divide-red-400 lg:max-w-7xl pt-12">
+    <div>
+      <h2 class="text-3xl tracking-tight font-extrabold text-blue-400 sm:text-4xl">Bonus Episodes</h2>
+    </div>
+    <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+    <% resource.data.episodes.select { |e| e.episode_number.nil? }.each do |episode| %>
+      <div>
+        <p class="text-sm text-blue-400">
+          <time datetime="<%= Date.parse(episode[:published_at]).strftime("%F") %>"><%= Date.parse(episode[:published_at]).strftime("%b %d, %Y") %></time>
+        </p>
+        <a href="/episodes/<%= episode[:slug] %>" class="mt-2 block">
+          <p class="text-xl font-semibold text-gray-50"><%= episode[:title] %></p>
+          <p class="mt-3 text-base text-gray-100"><%== episode[:summary] %></p>
+        </a>
+        <div class="mt-3">
+          <a href="#" class="text-base font-semibold text-indigo-400 hover:text-indigo-500"> Listen </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>

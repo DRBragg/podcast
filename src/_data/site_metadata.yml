@@ -4,8 +4,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: Your awesome title
-tagline: This site is totally awesome
-email: your-email@example.com
+title: Code and the Coding Coders who Code it
+tagline: A Podcast about... Code.
+email: drbragg@hey.com
 description: >-
-  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  We talk about Ruby, Rails, JavaScript, and everything in between. From tiny tips to bigger challenges we take on 3 questions a show; What are you working on? What's blocking you? What's something cool you want to share?
