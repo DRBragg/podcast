@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<%= render ContainerComponent.new(classes: "mx-auto space-y-8") do %>
+ <header>
+  <div class="max-w-7xl mx-auto px-4">
+    <h1 class="text-3xl font-bold leading-tight text-gray-900"><%= resource.data.episode.title %></h1>
+  </div>
+</header>
+<div class="prose dark:prose-invert ">
+  <%= yield %>
+</div>
+<% end %>

@@ -1,7 +1,6 @@
 ---<%
 # route: /episodes
-puts app.bridgetown_site.inspect
-episodes = app.bridgetown_site.data.episodes.map { |e| e.merge(slug: Bridgetown::Utils.slugify(e.title)) }
+episodes = app.bridgetown_site.data.episodes.map { |e| e.merge(slug: Bridgetown::Utils.slugify(e.title)) unless e.title }
 r.get do
   render_with data: {
     layout: :page,
