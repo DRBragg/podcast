@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<%= render ContainerComponent.new do %>
 <h1><%= resource.data.title %></h1>
 
 <%= yield %>
+<% end %>
