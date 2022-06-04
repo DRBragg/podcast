@@ -16,3 +16,9 @@ jobs:
           deno-version: v1.10.x
       - name: Check out repo
         uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v3
+        with:
+          http_url: https://www.buzzsprout.com/api/1927628
+          downloaded_filename: src/_data/episodes.json
+          authorization: Bearer ${{ secrets.BUZZSPROUT_TOKEN }}
