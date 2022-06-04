@@ -50,6 +50,9 @@ GEM
       zeitwerk (~> 2.5)
     bridgetown-paginate (1.0.0)
       bridgetown-core (= 1.0.0)
+    bridgetown-routes (1.0.0)
+      bridgetown-core (= 1.0.0)
+      roda-route_list (>= 2.1)
     bridgetown-view-component (1.0.0)
       actionview (>= 6.0)
       bridgetown (>= 1.0.0.beta3, < 2.0)
@@ -125,6 +128,8 @@ GEM
     rexml (3.2.5)
     roda (3.56.0)
       rack
+    roda-route_list (2.1.0)
+      roda
     rouge (3.29.0)
     ruby2_keywords (0.0.5)
     serbea (1.0.1)
@@ -149,6 +154,7 @@ PLATFORMS
 
 DEPENDENCIES
   bridgetown (~> 1.0.0)
+  bridgetown-routes (~> 1.0.0)
   bridgetown-view-component (~> 1.0)
   puma (~> 5.6)
 

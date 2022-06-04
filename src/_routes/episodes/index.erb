@@ -1,0 +1,18 @@
+---<%
+# route: /episodes
+puts app.bridgetown_site.inspect
+episodes = app.bridgetown_site.data.episodes.map { |e| e.merge(slug: Bridgetown::Utils.slugify(e.title)) }
+r.get do
+  render_with data: {
+    layout: :page,
+    title: "Episodes",
+    episodes: episodes
+  }
+end
+%>---
+
+<ul>
+  <% resource.data.episodes.each do |episode| %>
+    <li><a href="/episodes/<%= episode[:slug] %>"><%= episode[:title] %></a></li>
+  <% end %>
+</ul>

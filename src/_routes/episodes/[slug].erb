@@ -1,0 +1,20 @@
+---<%
+# route: /items/:slug
+episodes = app.bridgetown_site.data.episodes
+r.get do
+  # item_id, *item_sku = r.params[:slug].split("-")
+  # item_sku = item_sku.join("-")
+  episode = episodes.find { |i| Bridgetown::Utils.slugify(i.title) == r.params[:slug] }
+  render_with data: {
+    layout: :page,
+    title: "Item Page",
+    episode: episode
+    # item_id: item_id,
+    # item_sku: item_sku
+  }
+end
+%>---
+
+<p><strong>Item ID:</strong> <%= resource.data.episode.title %></p>
+
+<p><strong>Item SKU:</strong> <%= resource.data.episode.description.html_safe %></p>
