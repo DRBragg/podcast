@@ -6,7 +6,7 @@ const slugify = (str) => str.toLowerCase().replace(/\s\-\s/, ' ').split(' ').joi
 
 for (const episode in json) {
   const episodeData = json[episode]
-  const episodeFile = `${slugify(episodeData.title)}.json`
+  const episodeFile = `src/_data/${slugify(episodeData.title)}.json`
   await writeJSON(episodeFile, episodeData)
 }
 

@@ -4,15 +4,19 @@
 layout: default
 ---
 
-<div class="max-w-7xl mx-auto pt-16 pb-8 px-4 sm:py-24 sm:px-6 lg:px-8">
-  <div class="text-center">
-    <h2 class="text-base font-semibold text-indigo-600 tracking-wide"><%= site.metadata.tagline %></h2>
-    <p class="mt-1 text-4xl font-extrabold text-gray-50 sm:text-5xl sm:tracking-tight lg:text-6xl"><%= site.metadata.title %></p>
-    <p class="max-w-xl mt-5 mx-auto text-xl text-gray-200"><%= site.metadata.description %></p>
+<div class="flex max-w-7xl mx-auto pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+  <div class="mr-8 flex-shrink-0 self-center">
+    <img class="h-72 w-72 rounded-xl" src="<%= relative_url '/images/podcast.jpeg' %>" alt="Logo">
+  </div>
+  <div class="mt-4">
+    <h4 class="text-6xl font-bold"><%= site.metadata.title %></h4>
+    <p class="mt-2 text-2xl text-slate-400"><%= site.metadata.description %></p>
   </div>
 </div>
 
-<div class="overflow-hidden shadow rounded-lg mx-auto w-2/3">
+<hr class="w-3/4 mx-auto border border-red-400 w-">
+
+<div class="overflow-hidden shadow rounded-lg mx-auto w-2/3 pt-8">
   <div class="px-4 py-5 sm:p-6">
     <div id='buzzsprout-small-player-limit-5'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1927628.js?artist=&container_id=buzzsprout-small-player-limit-5&limit=5&player=small'></script>
   </div>

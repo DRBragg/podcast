@@ -4,7 +4,7 @@
     <%= render "head", metadata: site.metadata, title: resource.data.title %>
   </head>
   <body class="<%= resource.data.layout %> <%= resource.data.page_class %> text-neutral-50">
-    <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+    <%= render "banner", message: "New episodes monthly!"%>
 
     <main>
       <%= yield %>
