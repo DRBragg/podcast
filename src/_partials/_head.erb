@@ -1,9 +1,25 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <% resource_title = strip_html(strip_newlines(title)) %>
-<title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
 
-<meta name="description" content="<%= metadata.description %>" />
+<!-- Primary Meta Tags -->
+<title><%= metadata.title %></title>
+<meta name="title" content="<%= metadata.title %>">
+<meta name="description" content="<%= metadata.description %>">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= metadata.url %>">
+<meta property="og:title" content="<%= metadata.title %>">
+<meta property="og:description" content="<%= metadata.description %>">
+<meta property="og:image" content="<%= "#{metadata.url}/images/social_logo.jpeg" %>">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<%= metadata.url %>">
+<meta property="twitter:title" content="<%= metadata.title %>">
+<meta property="twitter:description" content="<%= metadata.description %>">
+<meta property="twitter:image" content="<%= "#{metadata.url}/images/social_logo.jpeg" %>">
 
 <link rel="stylesheet" href="<%= asset_path :css %>" data-turbo-track="reload" />
 <script src="<%= asset_path :js %>" data-turbo-track="reload" defer></script>
