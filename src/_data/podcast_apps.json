@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Apple Podcasts",
+    "icon": "apple_podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/code-and-the-coding-coders-who-code-it/id1608027128"
+  },
+  {
+    "name": "Google Podcasts",
+    "icon": "google_podcasts",
+    "url": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xOTI3NjI4LnJzcw=="
+  },
+  {
+    "name": "Spotify",
+    "icon": "spotify",
+    "url": "https://open.spotify.com/show/7ApBuE8jC4uMUN4lVDvPWu"
+  },
+  {
+    "name": "Overcast",
+    "icon": "overcast",
+    "url": "https://overcast.fm/itunes1608027128"
+  },
+  {
+    "name": "RSS Feed",
+    "icon": "rss",
+    "url": "https://feeds.buzzsprout.com/1927628.rss"
+  }
+]
