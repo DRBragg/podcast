@@ -1,25 +1,34 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-
 layout: default
 ---
 
-<div class="md:flex max-w-7xl mx-auto pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+<div class="md:flex max-w-7xl mx-auto sm:pt-16 pt-8 pb-12 px-4 sm:px-6 lg:px-8">
   <div class="mr-8 flex-shrink-0 self-center">
-    <img class="h-72 w-72 rounded-xl" src="<%= relative_url '/images/podcast.jpeg' %>" alt="Logo">
+    <img class="sm:h-72 h-40 w-auto rounded-xl" src="<%= relative_url '/images/podcast.jpeg' %>" alt="Logo">
   </div>
   <div class="mt-4">
-    <h4 class="text-6xl font-bold"><%= site.metadata.title %></h4>
-    <p class="mt-2 text-2xl text-slate-400"><%= site.metadata.description %></p>
+    <h4 class="sm:text-6xl text-4xl font-bold"><%= site.metadata.title %></h4>
+    <p class="mt-2 sm:text-2xl text-lg text-slate-400"><%= site.metadata.description %></p>
   </div>
 </div>
 
-<hr class="w-3/4 mx-auto border border-red-400 w-">
+<hr class="w-3/4 mx-auto border border-red-400">
 
-<div class="overflow-hidden shadow rounded-lg mx-auto sm:w-2/3 pt-8">
-  <div class="px-4 py-5 sm:p-6">
-    <div id='buzzsprout-small-player'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1927628.js?artist=&container_id=buzzsprout-small-player&player=small'></script>
+<div class="grid grid-cols-3 gap-4">
+  <div class="text-center pt-8 pl-3 sm:block hidden">
+    <p class="text-3xl font-bold border-b border-red-400 w-1/2 mx-auto pb-3 mb-3">Listen on</p>
+    <div class="grid">
+      <% site.data.podcast_apps.each do |app| %>
+        <div class="pb-4">
+          <%= render AppLinkComponent.new(name: app[:name], url: app[:url], icon: app[:icon]) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="sm:col-span-2 col-span-3 overflow-hidden shadow rounded-lg mx-auto pt-8 w-full">
+    <div class="sm:pr-16 px-5 py-5">
+      <div id="buzzsprout-small-player"></div><script type="text/javascript" charset="utf-8" src="https://www.buzzsprout.com/1927628.js?artist=&container_id=buzzsprout-small-player&player=small"></script>
+    </div>
   </div>
 </div>
-
-
