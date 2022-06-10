@@ -1,7 +1,7 @@
 class AppLinkComponent < BaseComponent
   attr_reader :name, :url, :icon
 
-  CLASSES = "inline-flex items-center justify-center sm:px-6 sm:py-3 px-2 py-1 border border-transparent shadow-sm md:text-xl text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 sm:w-3/4".freeze
+  CLASSES = "inline-flex items-center justify-center sm:px-6 sm:py-3 px-2 py-1 border border-white shadow-sm md:text-xl text-base font-medium rounded-md text-white bg-violet-600 hover:bg-violet-500 sm:w-3/4".freeze
 
   def initialize(name:, url:, icon:)
     @name = name
