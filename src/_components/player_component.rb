@@ -27,5 +27,6 @@ class PlayerComponent < BaseComponent
   def call
     tag.div(id: container_id) do
       tag.script(src: src, type: "text/javascript", charset: "utf-8")
+    end
   end
 end
