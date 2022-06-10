@@ -17,9 +17,9 @@ layout: default
 <div class="grid grid-cols-3 gap-4">
   <div class="text-center pt-8 pl-3 sm:block hidden">
     <p class="text-3xl font-bold border-b border-red-400 w-1/2 mx-auto pb-3 mb-3">Listen on</p>
-    <div class="grid">
+    <div class="grid space-y-2">
       <% site.data.podcast_apps.each do |app| %>
-        <div class="pb-4">
+        <div>
           <%= render AppLinkComponent.new(name: app[:name], url: app[:url], icon: app[:icon]) %>
         </div>
       <% end %>
