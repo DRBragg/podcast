@@ -17,14 +17,17 @@ layout: default
 <div class="grid grid-cols-3 gap-4">
   <div class="text-center pt-8 pl-3 sm:block hidden">
     <p class="text-3xl font-bold border-b-2 border-red-400 w-1/2 mx-auto pb-3 mb-3">Listen on</p>
-    <div class="grid space-y-2">
+    <div class="grid space-y-2 mb-12">
       <%= render AppLinkComponent.with_collection(site.data.podcast_apps) %>
     </div>
+    <p class="text-3xl font-bold border-b-2 border-red-400 w-1/2 mx-auto pb-3 mb-3">Support the Show</p>
+    <%= render AppLinkComponent.new(app_link: {name: "Sponsor", icon: "support", url: "https://github.com/sponsors/DRBragg"}) %>
   </div>
+
 
   <div class="sm:col-span-2 col-span-3 overflow-hidden shadow rounded-lg mx-auto pt-8 w-full">
     <div class="sm:pr-16 px-5 py-5">
-     <%= PlayerComponent.new %>
+     <%= render PlayerComponent.new %>
     </div>
   </div>
 </div>
