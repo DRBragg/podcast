@@ -23,5 +23,10 @@
     "name": "RSS Feed",
     "icon": "rss",
     "url": "https://feeds.buzzsprout.com/1927628.rss"
+  },
+  {
+    "name": "More...",
+    "icon": "more",
+    "url": "https://podcast.drbragg.dev/share"
   }
 ]
