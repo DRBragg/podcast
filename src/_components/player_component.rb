@@ -11,7 +11,7 @@ class PlayerComponent < BaseComponent
 
   def query_string
     query = ["player=#{size}", "container_id=#{container_id}"]
-    query << "tags=#{tags.join(",")}" if tags.any?
+    query << "tags=#{tags.join("+")}" if tags.any?
     query << "limit=#{limit}" if limit.positive?
     query.join "&"
   end
