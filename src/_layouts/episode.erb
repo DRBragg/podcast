@@ -3,7 +3,7 @@ layout: default
 ---
 
 <%= render ContainerComponent.new(classes: "mx-auto space-y-8") do %>
-  <div class="prose dark:prose-invert pt-12">
+  <div class="prose-invert pt-12">
     <%= render PlayerComponent.new(tags: resource.data.tags) %>
 
     <%= resource.data.description.html_safe %>
