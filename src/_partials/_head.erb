@@ -2,8 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Primary Meta Tags -->
-<title><%= metadata.title %><%= " | #{title}" if title %></title>
-<meta name="title" content="<%= title || metadata.title %>">
+<title><%= metadata.title %><%= " | #{title}" if title.present? %></title>
+<meta name="title" content="<%= title.presence || metadata.title %>">
 <meta name="description" content="<%= description || metadata.description %>">
 
 <!-- Open Graph / Facebook -->
