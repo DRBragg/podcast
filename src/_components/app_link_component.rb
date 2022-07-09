@@ -2,25 +2,25 @@ class AppLinkComponent < BaseComponent
   attr_reader :name, :url, :icon
 
   CLASSES = %w[
+    bg-violet-600
+    border
+    border-white
+    font-medium
+    hover:bg-violet-500
     inline-flex
     items-center
     justify-center
-    sm:px-6
-    sm:py-3
+    md:text-lg
+    mx-auto
     px-2
     py-1
-    mx-auto
-    border
-    border-white
-    shadow-sm
-    md:text-xl
-    text-base
-    font-medium
     rounded-md
-    text-white
-    bg-violet-600
-    hover:bg-violet-500
+    shadow-sm
+    sm:px-6
+    sm:py-3
     sm:w-3/4
+    text-base
+    text-white
   ].freeze
 
   def initialize(app_link:)
@@ -29,9 +29,9 @@ class AppLinkComponent < BaseComponent
     @icon = app_link[:icon]
   end
 
-  def render_icon = render("icons/#{icon}", color: "#fff", classes: "sm:h-10 h-8 sm:w-10 w-8")
+  def render_icon = render("icons/#{icon}", color: "#fff", classes: "h-8 w-8")
 
-  def render_name = tag.span(name, class: "sm:inline hidden pl-3")
+  def render_name = tag.span(name, class: "sm:inline hidden pl-2")
 
   def call
     tag.a(href: url, class: join_classes(CLASSES)) do
