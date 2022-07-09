@@ -8,17 +8,17 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="<%= url || metadata.url %>">
-<meta property="og:title" content="<%= title || metadata.title %>">
-<meta property="og:description" content="<%= description || metadata.description %>">
+<meta property="og:url" content="<%= url.presence || metadata.url %>">
+<meta property="og:title" content="<%= title.presence || metadata.title %>">
+<meta property="og:description" content="<%= description.presence || metadata.description %>">
 <meta property="og:image" content="<%= "#{metadata.url}/images/social_logo.jpeg" %>">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary">
 <meta property="twitter:site" content="@DRBragg">
-<meta property="twitter:url" content="<%= url || metadata.url %>">
-<meta property="twitter:title" content="<%= title || metadata.title %>">
-<meta property="twitter:description" content="<%= description || metadata.description %>">
+<meta property="twitter:url" content="<%= url.presence || metadata.url %>">
+<meta property="twitter:title" content="<%= title.presence || metadata.title %>">
+<meta property="twitter:description" content="<%= description.presence || metadata.description %>">
 <meta property="twitter:image" content="<%= "#{metadata.url}/images/social_logo.jpeg" %>">
 
 <link rel="stylesheet" href="<%= asset_path :css %>" data-turbo-track="reload" />
