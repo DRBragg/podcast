@@ -8,6 +8,7 @@ class Builders::EpisodeBuilder < SiteBuilder
           description episode[:description]
           tags episode[:tags]
           release_date episode[:published_at]
+          summary episode[:summary]
         end
       end
     end
