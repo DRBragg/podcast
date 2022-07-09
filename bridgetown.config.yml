@@ -14,7 +14,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "https://foo.com" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://podcast.drbragg.dev" # the base hostname & protocol for your site, e.g. https://example.com
 
 permalink: pretty
 template_engine: erb
