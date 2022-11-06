@@ -10,6 +10,11 @@
         <span class="sr-only">Twitter</span>
         <%= render "icons/twitter", color: "currentColor", classes: "h-5 w-5" %>
       </a>
+
+      <a rel="me" href="<%= metadata.mastodon %>" class="text-gray-400 hover:text-gray-500">
+        <span class="sr-only">Mastodon</span>
+        <%= render "icons/mastodon", color: "currentColor", classes: "h-5 w-5" %>
+      </a>
     </div>
     <div class="mt-8 md:mt-0 md:order-1">
       <p class="text-center text-base text-gray-400">All content &copy; <%= Date.today.year %> <%= metadata.title %>.</p>
