@@ -17,6 +17,11 @@ title: ""
 
 
   <div class="sm:col-span-2 col-span-3 overflow-hidden shadow rounded-lg mx-auto pt-8 w-full">
-    <%= render PlayerComponent.new.wrapped_with(:div, class: "sm:pr-16 px-5 py-5") %>
+    <div class="sm:pr-16 p-5">
+      <%= render PlayerComponent.new(limit: 10) %>
+      <div class="text-center">
+          <a href="/episodes" class="text-2xl font-semibold text-indigo-400 hover:text-indigo-500">More Episodes...</a>
+      </div>
+    </div>
   </div>
 </div>
