@@ -3,17 +3,17 @@
     <div class="flex justify-center space-x-6 md:order-2">
       <a href="mailto:<%= metadata.email %>" class="text-gray-400 hover:text-gray-500">
         <span class="sr-only">EMail</span>
-        <%= render "icons/email", color: "currentColor", classes: "h-5 w-5"%>
+        <%= render IconComponent.new("email", classes: "h-5 w-5") %>
       </a>
 
       <a href="<%= metadata.twitter %>" class="text-gray-400 hover:text-gray-500">
         <span class="sr-only">Twitter</span>
-        <%= render "icons/twitter", color: "currentColor", classes: "h-5 w-5" %>
+        <%= render IconComponent.new("twitter", classes: "h-5 w-5") %>
       </a>
 
       <a rel="me" href="<%= metadata.mastodon %>" class="text-gray-400 hover:text-gray-500">
         <span class="sr-only">Mastodon</span>
-        <%= render "icons/mastodon", color: "currentColor", classes: "h-5 w-5" %>
+        <%= render IconComponent.new("mastodon", classes: "h-5 w-5") %>
       </a>
     </div>
     <div class="mt-8 md:mt-0 md:order-1">
