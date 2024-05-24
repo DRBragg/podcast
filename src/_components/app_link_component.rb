@@ -29,7 +29,7 @@ class AppLinkComponent < BaseComponent
     @icon = app_link[:icon]
   end
 
-  def render_icon = render("icons/#{icon}", color: "#fff", classes: "h-8 w-8")
+  def render_icon = render IconComponent.new(icon, color: "#fff", classes: "h-8 w-8")
 
   def render_name = tag.span(name, class: "sm:inline hidden pl-2")
 

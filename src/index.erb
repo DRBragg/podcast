@@ -17,8 +17,6 @@ title: ""
 
 
   <div class="sm:col-span-2 col-span-3 overflow-hidden shadow rounded-lg mx-auto pt-8 w-full">
-    <div class="sm:pr-16 px-5 py-5">
-     <%= render PlayerComponent.new %>
-    </div>
+    <%= render PlayerComponent.new.wrapped_with(:div, class: "sm:pr-16 px-5 py-5") %>
   </div>
 </div>

@@ -3,42 +3,6 @@ layout: default
 ---
 
 <div class="pt-8 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-  <div class="relative mx-auto divide-y-2 divide-red-400">
-    <div>
-      <h2 class="text-3xl tracking-tight font-extrabold text-blue-400 sm:text-4xl">Full Episodes</h2>
-    </div>
-    <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-    <% site.data.episodes.reject { |e| e.episode_number.nil? }.each do |episode| %>
-      <div>
-        <p class="text-sm text-blue-400">
-          <time datetime="<%= Date.parse(episode[:published_at]).strftime("%F") %>"><%= Date.parse(episode[:published_at]).strftime("%b %d, %Y") %></time>
-        </p>
-        <p class="text-xl font-semibold text-gray-50"><%= episode[:title] %></p>
-        <p class="mt-3 text-base text-gray-100"><%== episode[:summary] %></p>
-        <div class="mt-3">
-          <a href="/episodes/<%= Bridgetown::Utils.slugify(episode[:title]) %>" class="text-base font-semibold text-indigo-400 hover:text-indigo-500"> Listen </a>
-        </div>
-      </div>
-    <% end %>
-    </div>
-  </div>
-  <div class="relative mx-auto divide-y-2 divide-red-400 pt-8">
-    <div>
-      <h2 class="text-3xl tracking-tight font-extrabold text-blue-400 sm:text-4xl">Bonus Episodes</h2>
-    </div>
-    <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-    <% site.data.episodes.select { |e| e.episode_number.nil? }.each do |episode| %>
-      <div>
-        <p class="text-sm text-blue-400">
-          <time datetime="<%= Date.parse(episode[:published_at]).strftime("%F") %>"><%= Date.parse(episode[:published_at]).strftime("%b %d, %Y") %></time>
-        </p>
-        <p class="text-xl font-semibold text-gray-50"><%= episode[:title] %></p>
-        <p class="mt-3 text-base text-gray-100"><%== episode[:summary] %></p>
-        <div class="mt-3">
-          <a href="/episodes/<%= Bridgetown::Utils.slugify(episode[:title]) %>" class="text-base font-semibold text-indigo-400 hover:text-indigo-500"> Listen </a>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  </div>
+  <%= render Episodes::SectionComponent.new(title: "Full Episodes", episodes: site.data.episodes.reject { |e| e.episode_number.nil? }) %>
+  <%= render Episodes::SectionComponent.new(title: "Bonus Episodes", episodes: site.data.episodes.select { |e| e.episode_number.nil? }) %>
 </div>
