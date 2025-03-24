@@ -29,9 +29,11 @@ class AppLinkComponent < BaseComponent
     @icon = app_link[:icon]
   end
 
-  def render_icon = render IconComponent.new(icon, color: "#fff", classes: "h-8 w-8")
+  def render_icon
+    render IconComponent.new(icon, color: "#fff", classes: name.present? ? "h-8 w-8" : "h-8 w-30")
+  end
 
-  def render_name = tag.span(name, class: "sm:inline hidden pl-2")
+  def render_name = tag.span(name, class: "sm:inline hidden pl-2") if name.present?
 
   def call
     tag.a(href: url, class: join_classes(CLASSES)) do
