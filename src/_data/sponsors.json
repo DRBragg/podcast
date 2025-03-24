@@ -2,7 +2,12 @@
   {
     "name": "Honeybadger",
     "icon": "honeybadger",
-    "url": "https://www.honeybadger.io/"
+    "url": "https://www.honeybadger.io/?utm_source=codingcoders&utm_medium=podcast"
+  },
+  {
+    "name": "",
+    "icon": "judoscale",
+    "url": "https://judoscale.com/"
   },
   {
     "name": "Become a Sponsor",
