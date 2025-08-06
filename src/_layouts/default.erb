@@ -3,8 +3,8 @@
   <head>
     <%= render "head", metadata: site.metadata, title: resource.data.title, description: resource.data.summary, url: resource.absolute_url %>
   </head>
-  <body class="<%= resource.data.layout %> <%= resource.data.page_class %> text-neutral-50">
-    <%= render "banner", message: "New episodes on the first and third Tuesdays of the month!"%>
+  <body class="<%= resource.data.layout %>-view <%= resource.data.page_class %> text-neutral-50">
+    <%= render "banner", message: "New episodes on the first and third Tuesdays of the month!" %>
 
     <main>
       <%= render "header" %>

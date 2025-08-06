@@ -3,6 +3,7 @@ class Builders::EpisodeBuilder < SiteBuilder
     hook :site, :post_read do
       site.data[:episodes].reject { |e| e[:private] }.each do |episode|
         add_resource :episodes, "#{Bridgetown::Utils.slugify(episode[:title])}.md" do
+          id episode[:id]
           layout "episode"
           title episode[:title]
           description episode[:description]

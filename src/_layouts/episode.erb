@@ -4,7 +4,7 @@ layout: default
 
 <%= render ContainerComponent.new(classes: "mx-auto space-y-8") do %>
   <div class="prose-invert prose-a:text-indigo-400 hover:prose-a:text-indigo-500 pt-12 sm:px-0 px-4">
-    <%= render PlayerComponent.new(tags: resource.data.tags) %>
+    <%= render PlayerComponent.new(tags: resource.data.tags, episode_id: resource.data.id) %>
 
     <%= resource.data.description.html_safe %>
   </div>
